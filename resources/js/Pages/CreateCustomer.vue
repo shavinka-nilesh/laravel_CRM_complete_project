@@ -34,19 +34,19 @@ const createCustomer = () => {//this method should be called in the @submit
       <form @submit.prevent="createCustomer">
         <div class="mb-3">
             <label for="customerName" class="form-label">Customer Name</label>
-            <input type="text" class="form-control" v-model="customerName"  placeholder="Enter Customer Name">
+            <input type="text" class="form-control" v-model="customerName"  placeholder="Enter Customer Name" required>
         </div>
         <div class="mb-3">
             <label for="customerEmail" class="form-label">Customer Email</label>
-            <input type="email" class="form-control" v-model="customerEmail" placeholder="Enter Customer Email">
+            <input type="email" class="form-control" v-model="customerEmail" placeholder="Enter Customer Email" required>
         </div>
         <div class="mb-3">
             <label for="customerPhone" class="form-label">Customer Phone</label>
-            <input type="tel" class="form-control" v-model="customerPhone" placeholder="Enter Customer Phone">
+            <input type="tel" class="form-control" v-model="customerPhone" placeholder="Enter Customer Phone" required>
         </div>
         <div class="mb-3">
             <label for="customerAddress" class="form-label">Customer Address</label>
-            <textarea class="form-control" v-model="customerAddress" rows="3" placeholder="Enter Customer Address"></textarea>
+            <textarea class="form-control" v-model="customerAddress" rows="3" placeholder="Enter Customer Address" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
       </form>

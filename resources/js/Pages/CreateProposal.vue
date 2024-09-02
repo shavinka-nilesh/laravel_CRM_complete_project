@@ -50,11 +50,11 @@ const createProposal = () => {//this method should be called in the @submit
       <form @submit.prevent="createProposal">
         <div class="mb-3">
             <label for="proposalTitle" class="form-label">Proposal Title</label>
-            <input type="text" class="form-control" v-model="proposalTitle" placeholder="Enter Proposal Title">
+            <input type="text" class="form-control" v-model="proposalTitle" placeholder="Enter Proposal Title" required>
         </div>
         <div class="mb-3">
             <label for="proposalDate" class="form-label">Proposal Date</label>
-            <input type="date" class="form-control" v-model="proposalDate">
+            <input type="date" class="form-control" v-model="proposalDate" required>
         </div>
         <div class="mb-3">
             <label for="clientName" class="form-label">Client Name</label>
@@ -62,11 +62,11 @@ const createProposal = () => {//this method should be called in the @submit
         </div>
         <div class="mb-3">
             <label for="proposalDetails" class="form-label">Proposal Details</label>
-            <textarea class="form-control" v-model="proposalDetails" rows="4" placeholder="Enter Proposal Details"></textarea>
+            <textarea class="form-control" v-model="proposalDetails" rows="4" placeholder="Enter Proposal Details" required></textarea>
         </div>
         <div class="mb-3">
             <label for="estimatedCost" class="form-label">Estimated Cost</label>
-            <input type="number" class="form-control" v-model="estimatedCost" placeholder="Enter Estimated Cost">
+            <input type="number" class="form-control" v-model="estimatedCost" placeholder="Enter Estimated Cost" required>
         </div>
         <button type="submit" class="btn btn-primary">Create Proposal</button>
       </form>

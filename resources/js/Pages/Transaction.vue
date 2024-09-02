@@ -67,6 +67,7 @@ const statusClass = (status) => {
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <!-- <th>#</th> -->
                         <th>#</th>
                         <th>Invoice Number</th>
                         <th>Customer Name</th>
@@ -77,7 +78,8 @@ const statusClass = (status) => {
                 </thead>
                 <tbody>
                     <tr v-for="(proposal, index) in filteredProposals" :key="proposal.id">
-                        <td>{{ index + 1 }}</td>
+                        <!-- <td>{{ index + 1 }}</td> -->
+                        <td>{{ proposal.id }}</td>
                         <td>{{ proposal.invoice_number }}</td>
                         <td>{{ proposal.customer_name }}</td>
                         <td>{{ proposal.amount }}</td>

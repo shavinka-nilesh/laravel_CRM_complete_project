@@ -46,7 +46,7 @@ const createInvoice = () => {
       <form @submit.prevent="createInvoice">
         <div class="mb-3">
           <label for="invoiceNumber" class="form-label">Invoice Number</label>
-          <input type="text" class="form-control" v-model="invoiceNumber" placeholder="Enter Invoice Number">
+          <input type="text" class="form-control" v-model="invoiceNumber" placeholder="Enter Invoice Number" required>
         </div>
         <div class="mb-3">
           <label for="invoiceDate" class="form-label">Invoice Date</label>
@@ -62,11 +62,11 @@ const createInvoice = () => {
         </div>
         <div class="mb-3">
           <label for="itemDescription" class="form-label">Item Description</label>
-          <textarea class="form-control" v-model="itemDescription" rows="3" placeholder="Enter Item Description"></textarea>
+          <textarea class="form-control" v-model="itemDescription" rows="3" placeholder="Enter Item Description" required></textarea>
         </div>
         <div class="mb-3">
           <label for="amount" class="form-label">Amount</label>
-          <input type="number" class="form-control" v-model="amount" placeholder="Enter Amount">
+          <input type="number" class="form-control" v-model="amount" placeholder="Enter Amount" required>
         </div>
         <button type="submit" class="btn btn-primary">Create</button>
       </form>

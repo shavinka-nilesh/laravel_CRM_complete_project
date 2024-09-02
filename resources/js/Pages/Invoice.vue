@@ -59,7 +59,7 @@ const statusClass = (status) => {
                     <!-- v-for="(object name, position in the current array) in invoices" :key="invoice.id"-this will provide a unique key for each raw -for rendering pourpose  -->
                     <tr v-for="(invoice, index) in invoices" :key="invoice.id">
                         <!-- this will display the raw number in the table -->
-                        <td>{{ index + 1 }}</td>
+                        <td>{{ invoice.id }}</td>
                         <!-- {{ object name.column name }} -->
                         <td>{{ invoice.invoice_number }}</td>
                         <td>{{ invoice.customer_name }}</td>

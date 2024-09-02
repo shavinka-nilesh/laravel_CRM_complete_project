@@ -63,7 +63,7 @@ const statusClass = (status) => {
             <tbody>
                 <tr v-for="(customers, index) in customers" :key="customers.id">
                         <!-- this will display the raw number in the table -->
-                        <td>{{ index + 1 }}</td>
+                        <td>{{ customers.id }}</td>
                         <!-- {{ object name.column name }} -->
                         <td>{{ customers.name }}</td>
                         <td>{{ customers.email }}</td>

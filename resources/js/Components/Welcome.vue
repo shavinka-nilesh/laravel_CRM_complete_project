@@ -32,6 +32,12 @@ const props = defineProps({ //This props section defines the data properties tha
                     <h2 class="text-lg font-medium text-gray-600">Total Invoices</h2>
                     <p class="text-3xl font-bold text-gray-900">{{ totalInvoices }}</p>
                 </div>
+                <!-- Total Proposals -->
+                <div class="bg-white p-6 rounded-lg shadow ">
+                                <h2 class="text-lg font-medium text-gray-600">Total Proposals</h2>
+                                <br/>
+                                <p class="text-3xl font-bold text-gray-900">{{ totalProposals }}</p>
+                            </div>
             </div>
 
             <div>
