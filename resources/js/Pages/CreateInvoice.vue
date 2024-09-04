@@ -68,7 +68,7 @@ const createInvoice = () => {
           <label for="amount" class="form-label">Amount</label>
           <input type="number" class="form-control" v-model="amount" placeholder="Enter Amount" required>
         </div>
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-outline-info">Create Invoice</button>
       </form>
     </div>
   </AppLayout>

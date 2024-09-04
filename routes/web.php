@@ -80,6 +80,9 @@ Route::middleware([
     Route::get('/payment-cancel', [PaymentController::class, 'cancel'])->name('payment.cancel');
     Route::get('/checkout/{invoice}', [PaymentController::class, 'createCheckoutSession'])->name('checkout');
     Route::post('/webhook/stripe', [WebhookController::class, 'handleStripeWebhook']);
+    // Route::get('/error', function () {
+    //     return view('error-page')->with('message', session('error'));
+    // })->name('error.page');
 
     ///Tranasaction Related Routes
     Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions');

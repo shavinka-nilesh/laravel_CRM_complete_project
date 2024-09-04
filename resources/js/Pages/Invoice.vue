@@ -67,9 +67,9 @@ const statusClass = (status) => {
                         <td>{{ invoice.amount }}</td>
                         <td><span :class="statusClass(invoice.status)">{{ invoice.status }}</span></td>
                         <td>
-                            <a :href="route('invoice.show', invoice.id)" class="btn btn-info btn-sm me-2">View</a>
+                            <a :href="route('invoice.show', invoice.id)" class="btn btn-outline-info btn-sm me-2">View</a>
                             <!-- <a href="#" class="btn btn-warning btn-sm  me-2">Edit</a> -->
-                            <button  @click="confirmDelete(invoice.id)" class="btn btn-danger btn-sm me-2">Delete</button>
+                            <button  @click="confirmDelete(invoice.id)" class="btn btn-outline-danger btn-sm me-2">Delete</button>
                             <button
                             @click="changeStatus(invoice.id)"
                             :class="invoice.status === 'approved' ? 'btn btn-warning btn-sm me-2' : 'btn btn-success btn-sm me-2'"

@@ -67,9 +67,9 @@ const statusClass = (status) => {
                         <td><span :class="statusClass(proposals.status)">{{ proposals.status }}</span></td>
                     <td>
                         <!-- this proposals in comes from the key field above code -->
-                        <a :href="route('proposal.show', proposals.id)" class="btn btn-info btn-sm me-2">View</a>
+                        <a :href="route('proposal.show', proposals.id)" class="btn btn-outline-info btn-sm me-2">View</a>
                         <!-- <a href="#" class="btn btn-warning btn-sm me-2">Edit</a> -->
-                        <button  @click="confirmDelete(proposals.id)" class="btn btn-danger btn-sm me-2">Delete</button>
+                        <button  @click="confirmDelete(proposals.id)" class="btn btn-outline-danger btn-sm me-2">Delete</button>
                         <!-- <a :href="route('create_invoice', { customer_id: proposals.id })" class="btn btn-dark btn-sm me-2">Create Invoice</a> -->
                         <button
                             @click="changeStatus(proposals.id)"

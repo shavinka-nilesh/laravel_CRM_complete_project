@@ -68,7 +68,7 @@ const createProposal = () => {//this method should be called in the @submit
             <label for="estimatedCost" class="form-label">Estimated Cost</label>
             <input type="number" class="form-control" v-model="estimatedCost" placeholder="Enter Estimated Cost" required>
         </div>
-        <button type="submit" class="btn btn-primary">Create Proposal</button>
+        <button type="submit" class="btn btn-outline-info">Create Proposal</button>
       </form>
     </div>
 </AppLayout>

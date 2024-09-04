@@ -54,7 +54,7 @@ const updateCustomer = () => {
           <input v-model="form.address" id="address" type="text" class="form-control" />
         </div>
 
-        <button type="submit" class="btn btn-success">Update Customer</button>
+        <button type="submit" class="btn btn-outline-primary">Update Customer</button>
       </form>
     </div>
   </AppLayout>

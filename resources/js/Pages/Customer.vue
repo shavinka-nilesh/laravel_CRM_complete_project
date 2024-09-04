@@ -46,7 +46,7 @@ const statusClass = (status) => {
         </template>
     <div class="container mt-5 p-6 lg:p-8 bg-white border-b border-gray-200 shadow-xl sm:rounded-lg">
         <div class="mb-3">
-            <a :href="route('create_customer')" :active="route().current('create_customer')" class="btn btn-primary btn-sm me-2">Add Customer</a>
+            <a :href="route('create_customer')" :active="route().current('create_customer')" class="btn btn-outline-primary btn-sm me-2">Add Customer</a>
         </div>
         <table class="table table-striped" >
             <thead>
@@ -71,15 +71,15 @@ const statusClass = (status) => {
                         <td>{{ customers.phone }}</td>
                         <td><span :class="statusClass(customers.status)">{{ customers.status }}</span></td>
                     <td>
-                        <a :href="route('customer.show', customers.id)" class="btn btn-info btn-sm me-2">View</a>
+                        <a :href="route('customer.show', customers.id)" class="btn btn-outline-info btn-sm me-2">View</a>
                         <!-- <a :href="route('customer.edit', customers.id)" class="btn btn-warning btn-sm me-2">Edit</a> -->
-                        <button  @click="confirmDelete(customers.id)" class="btn btn-danger btn-sm me-2">Delete</button>
+                        <button  @click="confirmDelete(customers.id)" class="btn btn-outline-danger btn-sm me-2">Delete</button>
                         <!-- <a :href="route('create_invoice', { customer_id: customers.id })" class="btn btn-dark btn-sm me-2">Create Invoice</a> -->
                          <!-- Only show the Create Proposal button if the customer is active -->
                         <a
                             v-if="customers.status === 'active'"
                             :href="route('create_invoice', { customer_id: customers.id })"
-                            class="btn btn-dark btn-sm me-2"
+                            class="btn btn-outline-dark btn-sm me-2"
                         >
                             Create Invoice
                         </a>
@@ -88,7 +88,7 @@ const statusClass = (status) => {
                         <a
                             v-if="customers.status === 'active'"
                             :href="route('create_proposal', { customer_id: customers.id })"
-                            class="btn btn-dark btn-sm me-2"
+                            class="btn btn-outline-dark btn-sm me-2"
                         >
                             Create Proposal
                         </a>

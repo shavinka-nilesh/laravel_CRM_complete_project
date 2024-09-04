@@ -15,6 +15,11 @@ class PaymentController extends Controller
     //Cretae the session for the checkout
     public function createCheckoutSession(Invoice $invoice)
     {
+    //     // Check if the invoice is already paid
+    // if ($invoice->status === 'paid') {
+    //     // Redirect to an error page or show an error message
+    //     return redirect()->route('error.page')->with('error', 'This invoice has already been paid.');
+    // }
         Stripe::setApiKey(config('services.stripe.secret'));// This line sets the Stripe API key used for authenticating requests to Stripe's API
 
         try {//The try-catch block is used to handle any exceptions that might occur while creating the Stripe session. If an error occurs, the catch block will log the error and redirect the user back with an error message.
