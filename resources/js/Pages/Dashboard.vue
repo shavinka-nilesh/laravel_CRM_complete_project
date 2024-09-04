@@ -24,7 +24,7 @@ const props = defineProps({//This props section defines the data properties that
                     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                                 <div>
-                    <div class="p-6 lg:p-8 bg-white border-b border-gray-200">
+                    <div class="p-6 lg:p-8 bg-green-100 border-b border-gray-200">
                         <h1 class="mt-8 text-2xl font-medium text-gray-900">
                             <!-- This will display the user name  -->
                             Welcome {{ $page.props.auth.user.name }}
@@ -32,7 +32,7 @@ const props = defineProps({//This props section defines the data properties that
                     </div>
                     <!-- this will display the total numbers of customers and Invoices -->
                     <!-- The grid adjusts its columns depending on screen size (grid-cols-1 for small screens, sm:grid-cols-2 for medium, and lg:grid-cols-4 for large screens).-->
-                    <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8">
+                    <div class="bg-green-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8">
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
                             <!-- Total Customers -->
                             <div class="bg-white p-3 rounded-lg shadow  ">

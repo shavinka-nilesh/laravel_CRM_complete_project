@@ -39,7 +39,7 @@ const statusClass = (status) => {
                 Invoice
             </h2>
         </template>
-    <div class="container mt-5 p-6 lg:p-8 bg-white border-b border-gray-200">
+    <div class="container mt-5 p-6 lg:p-8 bg-white border-b border-gray-200 shadow-xl sm:rounded-lg">
         <div class="mb-3">
             <!-- <a :href="route('create_invoice')" :active="route().current('create_invoice')" class="btn btn-secondary btn-sm me-2">Create Invoice</a> -->
         </div>

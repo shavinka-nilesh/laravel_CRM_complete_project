@@ -44,7 +44,7 @@ const statusClass = (status) => {
                 Customer
             </h2>
         </template>
-    <div class="container mt-5 p-6 lg:p-8 bg-white border-b border-gray-200">
+    <div class="container mt-5 p-6 lg:p-8 bg-white border-b border-gray-200 shadow-xl sm:rounded-lg">
         <div class="mb-3">
             <a :href="route('create_customer')" :active="route().current('create_customer')" class="btn btn-primary btn-sm me-2">Add Customer</a>
         </div>

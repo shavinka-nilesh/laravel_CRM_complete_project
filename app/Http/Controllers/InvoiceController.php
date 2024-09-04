@@ -55,7 +55,7 @@ class InvoiceController extends Controller
             'customer_name' => $request->customer_name,
             'amount' => $request->amount,
             'invoice_date' => $request->invoice_date,
-            'status' => 'pending', // or any default status
+            'status' => 'pending', //  any default status
         ]);
 
         // Generate the checkout URL

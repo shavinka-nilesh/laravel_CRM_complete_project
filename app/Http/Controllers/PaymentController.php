@@ -15,32 +15,32 @@ class PaymentController extends Controller
     //Cretae the session for the checkout
     public function createCheckoutSession(Invoice $invoice)
     {
-        Stripe::setApiKey(config('services.stripe.secret'));
+        Stripe::setApiKey(config('services.stripe.secret'));// This line sets the Stripe API key used for authenticating requests to Stripe's API
 
-        try {
-            $session = Session::create([
-                'payment_method_types' => ['card'],
-                'line_items' => [[
+        try {//The try-catch block is used to handle any exceptions that might occur while creating the Stripe session. If an error occurs, the catch block will log the error and redirect the user back with an error message.
+            $session = Session::create([//This creates a new payment session with Stripe. A session is essentially a set of instructions that tells Stripe how to process the payment.
+                'payment_method_types' => ['card'],//Specifies that the payment method allowed is a card (credit or debit).
+                'line_items' => [[// This array contains the details of the items being purchased.
                     'price_data' => [
                         'currency' => 'lkr',//this will change the currency to ruppies
                         'product_data' => [
-                            'name' => 'Invoice #' . $invoice->id,
+                            'name' => 'Invoice #' . $invoice->id,//Defines named "Invoice #", followed by the invoice ID.
                         ],
                         'unit_amount' => $invoice->amount * 100,//if we remove this 100 the stripe willl give an error because its default payment is with cents.
                     ],
-                    'quantity' => 1,
+                    'quantity' => 1,//Specifies the quantity of the item. Here, it's 1, because it's billing for a single invoice.
                 ]],
-                'mode' => 'payment',
-                'success_url' => route('payment.success', ['invoice' => $invoice->id]),
-                'cancel_url' => route('payment.cancel', ['invoice' => $invoice->id]),
-                'metadata' => [
+                'mode' => 'payment',//Specifies that the session is for a one-time payment. Stripe also supports subscription modes, but here it's a simple paymen
+                'success_url' => route('payment.success', ['invoice' => $invoice->id]),//This URL is where the user will be redirected after a successful payment. It’s dynamically generated using the route helper to include the invoice ID.
+                'cancel_url' => route('payment.cancel', ['invoice' => $invoice->id]),//This URL is where the user will be redirected if they cancel the payment process. Like the success URL, it includes the invoice ID.
+                'metadata' => [//Metadata can store additional information with the session, like the invoice ID, this is useful later when handling webhooks to automatically update the status to paid.
                     'invoice_id' => $invoice->id, // Pass the invoice ID as metadata
                 ],
             ]);
 
-            return redirect($session->url);
+            return redirect($session->url);//After successfully creating the Stripe session, the user is redirected to the Stripe-hosted payment page ($session->url), where they can complete the payment.
         } catch (\Exception $e) {
-            Log::error('Error creating Stripe session: ' . $e->getMessage());
+            Log::error('Error creating Stripe session: ' . $e->getMessage());//If something goes wrong while creating the session (e.g., network issues, incorrect API keys, etc.), the error is caught, logged for debugging (Log::error(...)), and the user is redirected back to the previous page with an error message.
             return back()->with('error', 'Unable to create payment session. Please try again later.');
         }
     }
