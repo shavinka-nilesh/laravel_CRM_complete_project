@@ -36,7 +36,7 @@ const props = defineProps({//This props section defines the data properties that
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
                             <!-- Total Customers -->
                             <div class="bg-white p-3 rounded-lg shadow  ">
-                                <h2 class="text-lg font-medium text-gray-600">Total Customers</h2>
+                                <h2 class="text-lg font-medium text-gray-900">Total Customers</h2>
                                 <br/>
                                 <!-- {{Just put the prop name}} -->
                                 <p class="text-3xl font-bold text-gray-500">{{ totalCustomers }}</p>
@@ -55,7 +55,7 @@ const props = defineProps({//This props section defines the data properties that
                             </div>
                             <!-- Total Invoices -->
                             <div class="bg-white p-3 rounded-lg shadow items-center">
-                                <h2 class="text-lg font-medium text-gray-600 ">Total Transactions</h2>
+                                <h2 class="text-lg font-medium text-gray-900 ">Total Transactions</h2>
                                 <br/>
                                 <p class="text-3xl font-bold text-gray-500">{{ totalTransactions }}</p>
                             </div>

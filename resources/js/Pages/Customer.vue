@@ -74,8 +74,24 @@ const statusClass = (status) => {
                         <a :href="route('customer.show', customers.id)" class="btn btn-info btn-sm me-2">View</a>
                         <!-- <a :href="route('customer.edit', customers.id)" class="btn btn-warning btn-sm me-2">Edit</a> -->
                         <button  @click="confirmDelete(customers.id)" class="btn btn-danger btn-sm me-2">Delete</button>
-                        <a :href="route('create_invoice', { customer_id: customers.id })" class="btn btn-dark btn-sm me-2">Create Invoice</a>
-                        <a :href="route('create_proposal', { customer_id: customers.id })" class="btn btn-dark btn-sm me-2">Create Proposal</a>
+                        <!-- <a :href="route('create_invoice', { customer_id: customers.id })" class="btn btn-dark btn-sm me-2">Create Invoice</a> -->
+                         <!-- Only show the Create Proposal button if the customer is active -->
+                        <a
+                            v-if="customers.status === 'active'"
+                            :href="route('create_invoice', { customer_id: customers.id })"
+                            class="btn btn-dark btn-sm me-2"
+                        >
+                            Create Invoice
+                        </a>
+                        <!-- <a :href="route('create_proposal', { customer_id: customers.id })" class="btn btn-dark btn-sm me-2">Create Proposal</a> -->
+                        <!-- Only show the Create Proposal button if the customer is active,v-if="customer.status === 'active'": This directive ensures that the "Create Proposal" button is only rendered when the customer's status is active. -->
+                        <a
+                            v-if="customers.status === 'active'"
+                            :href="route('create_proposal', { customer_id: customers.id })"
+                            class="btn btn-dark btn-sm me-2"
+                        >
+                            Create Proposal
+                        </a>
                         <button
                             @click="changeStatus(customers.id)"
                             :class="customers.status === 'active' ? 'btn btn-warning btn-sm me-2' : 'btn btn-success btn-sm me-2'"

@@ -17,7 +17,7 @@ class DashboardController extends Controller
         $totalInvoices = Invoice::count();
         $totalProposals = Proposal::count();
         $totalTransactions = Transaction::count();
-        $latestInvoices = Invoice::orderBy('created_at', 'desc')->take(3)->get();//The latest() method sorts the invoices by their creation date in descending order, and the take(3) method limits the result to the most recent 5 invoices. The get() method then fetches these records from the database and stores them in the $latestInvoices variable.
+        $latestInvoices = Invoice::orderBy('created_at', 'desc')->take(3)->get();//The orderby() method order the invoices by their creation date in descending order, and the take(3) method limits the result to the most recent 5 invoices. The get() method then fetches these records from the database and stores them in the $latestInvoices variable.
         $recentTransactions = Transaction::orderBy('created_at', 'desc')->take(3)->get();
         $recentCustomers = Customer::orderBy('created_at', 'desc')->take(3)->get();
 

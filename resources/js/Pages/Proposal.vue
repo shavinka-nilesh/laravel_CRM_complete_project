@@ -40,7 +40,7 @@ const statusClass = (status) => {
         </template>
     <div class="container mt-5 p-6 lg:p-8 bg-white border-b border-gray-200">
         <div class="mb-3">
-            <a :href="route('create_proposal')" :active="route().current('create_proposal')" class="btn btn-primary btn-sm me-2">Create Proposal</a>
+            <!-- <a :href="route('create_proposal')" :active="route().current('create_proposal')" class="btn btn-primary btn-sm me-2">Create Proposal</a> -->
         </div>
         <table class="table table-striped" >
             <thead>
@@ -70,7 +70,7 @@ const statusClass = (status) => {
                         <a :href="route('proposal.show', proposals.id)" class="btn btn-info btn-sm me-2">View</a>
                         <!-- <a href="#" class="btn btn-warning btn-sm me-2">Edit</a> -->
                         <button  @click="confirmDelete(proposals.id)" class="btn btn-danger btn-sm me-2">Delete</button>
-                        <a :href="route('create_invoice', { customer_id: proposals.id })" class="btn btn-dark btn-sm me-2">Create Invoice</a>
+                        <!-- <a :href="route('create_invoice', { customer_id: proposals.id })" class="btn btn-dark btn-sm me-2">Create Invoice</a> -->
                         <button
                             @click="changeStatus(proposals.id)"
                             :class="proposals.status === 'approved' ? 'btn btn-warning btn-sm me-2' : 'btn btn-success btn-sm me-2'"
