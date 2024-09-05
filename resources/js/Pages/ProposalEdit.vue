@@ -61,7 +61,7 @@ const updateCustomer = () => {
         </div>
 
 
-        <button type="submit" class="btn btn-success">Update Proposal</button>
+        <button type="submit" class="btn btn-outline-info">Update Proposal</button>
       </form>
     </div>
   </AppLayout>

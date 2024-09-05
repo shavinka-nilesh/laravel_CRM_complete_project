@@ -64,7 +64,7 @@ class InvoiceController extends Controller
         // Send the invoice email with the checkout URL
         $this->sendInvoiceEmail($invoice, $checkoutUrl);
 
-        return redirect()->route('invoice')->with('success', 'Invoice and Transaction Created and Email sent Successfully!');
+        return redirect()->route('invoice')->with('success', 'Invoice,Transaction created and Email sent Successfully!');
     }
 
     //this will send email with the payment button

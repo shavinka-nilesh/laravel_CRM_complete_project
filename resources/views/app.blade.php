@@ -20,7 +20,11 @@
             {{ session('success') }}
         </div>
         @endif
-
+        @if (session('error'))
+        <div class="alert alert-danger">
+        {{ session('error') }}
+        </
+        @endif
     </head>
     <body class="font-sans antialiased">
         @inertia

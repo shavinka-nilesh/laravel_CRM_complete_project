@@ -70,12 +70,21 @@ const statusClass = (status) => {
                             <a :href="route('invoice.show', invoice.id)" class="btn btn-outline-info btn-sm me-2">View</a>
                             <!-- <a href="#" class="btn btn-warning btn-sm  me-2">Edit</a> -->
                             <button  @click="confirmDelete(invoice.id)" class="btn btn-outline-danger btn-sm me-2">Delete</button>
+                            <!-- Only show the buttons if the status is still 'pending' -->
+                            <div v-if="invoice.status === 'pending'">
+                            <!-- Approve Button -->
                             <button
-                            @click="changeStatus(invoice.id)"
-                            :class="invoice.status === 'approved' ? 'btn btn-warning btn-sm me-2' : 'btn btn-success btn-sm me-2'"
-          >
-                             {{ invoice.status === 'approved' ? 'reject' : 'approve' }}
-                        </button>
+                                @click="changeStatus(invoice.id, 'approved')"
+                                class="btn btn-success btn-sm me-2" >Approve
+                            </button>
+
+                            <!-- Reject Button -->
+                            <button
+                                @click="changeStatus(invoice.id, 'rejected')"
+                                class="btn btn-warning btn-sm me-2">
+                                Reject
+                            </button>
+                        </div>
                         </td>
                     </tr>
             </tbody>

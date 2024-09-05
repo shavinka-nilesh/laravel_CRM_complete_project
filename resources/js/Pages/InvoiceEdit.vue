@@ -61,7 +61,7 @@ const updateCustomer = () => {
         </div>
 
 
-        <button type="submit" class="btn btn-success">Update Invoice</button>
+        <button type="submit" class="btn btn-outline-info">Update Invoice</button>
       </form>
     </div>
   </AppLayout>
